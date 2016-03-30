@@ -1,4 +1,4 @@
-<!doctype html>
+  <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -24,17 +24,23 @@
     <div ng-app="app" class="app">
         <div ng-controller="UserController as user">
             <label>Username</label>
-            <input ng-model="user.username" />
+            <input ng-model="user.username" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0 }}" />
+
+            <h3>{{ user.newUsername }}</h3>
 
             <h5>Country</h5>
             <label>Short Name</label>
             <input ng-model="user.country.name.short" />
 
+            <h2>Country: {{ user.newCountry }}</h2>
+
             <label>Full Name</label>
-            <input ng-model="user.country.name.full" />
+            <input ng-model="user.country.name.full" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0 }}" />
 
             <label>Population</label>
             <input ng-model="user.country.population" />
+            
+            <p>{{user.country.population | number}}</p>
         </div>
     </div>
 
