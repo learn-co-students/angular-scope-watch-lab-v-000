@@ -26,7 +26,7 @@ function UserController() {
       return [ctrl.country.fullName, ctrl.country.shortName];
   }, function (newValue, oldValue) {
       console.log('country name updated!');
-  });
+  }, true);
 
 }
 
