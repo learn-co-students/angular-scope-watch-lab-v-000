@@ -20,9 +20,9 @@ function UserController() {
   }, true);
 
   $scope.$watchCollection(function () {
-    return this.country;
+    return this.country.name;
   }, function (newValue, oldValue) {
-    console.log('country has been updated')
+    console.log('country name has been updated')
   });
 
 }
