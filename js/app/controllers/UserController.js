@@ -1,13 +1,34 @@
 function UserController() {
-	this.username = '';
+  var ctrl = this;
+  ctrl.username = '';
 
-	this.country = {
-		name: {
+  ctrl.country = {
+    name: {
+      full: '',
+      short: ''
+    },
+    population: ''
+  };
 
-		}
-	};
+  $scope.$watch(function(){
+    return ctrl.username;
+  }, function(new, old){
+    console.log('value updated!');
+  });
+
+  $scope.$watch(function(){
+    return ctrl.country;
+  }, function(new, old){
+    console.log('value updated!');
+  }, true);
+
+  $scope.$watchCollection(function(){
+    return ctrl.country.name;
+  }, function(new, old){
+    console.log('value updated!');
+  });
 }
 
 angular
-	.module('app')
-	.controller('UserController', UserController);
+  .module('app')
+  .controller('UserController', UserController);
