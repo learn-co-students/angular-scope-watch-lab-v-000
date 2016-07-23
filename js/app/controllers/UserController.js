@@ -13,19 +13,19 @@ function UserController($scope) {
 	$scope.$watch(function(){
 		return ctrl.username;
 	}, function(oldValue, newValue) {
-		console.log('value updated!');
+		console.log('value updated with $scope.$watch!');
 	});
 
 	$scope.$watch(function(){
 		return ctrl.country;
 	}, function(oldValue, newValue){
-		console.log('value updated!');
+		console.log('value updated using deep watch!');
 	}, true);
 
 	$scope.$watchCollection(function(){
 		return ctrl.country.name;
 	}, function(oldValue, newValue){
-		console.log('value updated!');
+		console.log('value updated using $scope.$watchCollection!');
 	});
 }
 
