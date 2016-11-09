@@ -7,11 +7,17 @@ function UserController($scope) {
 		}
 	};
 
-  $scope.watch(function(){
+  $scope.$watchCollection(function(){
+    return this.country.name;
+  }, function(newVal, oldVal){
+    console.log('you just changed ' + oldVal + ' to ' + newVal)
+  });
+
+  $scope.$watch(function(){
     return this.country;
   }, function(newVal, oldVal){
     console.log('you just changed ' + oldVal + ' to ' + newVal)
-  }, true)
+  }, true);
 }
 
 angular
