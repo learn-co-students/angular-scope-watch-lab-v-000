@@ -1,4 +1,4 @@
-function UserController() {
+function UserController($scope) {
 	this.username = '';
 
 	this.country = {
@@ -6,6 +6,18 @@ function UserController() {
 
 		}
 	};
+
+	$scope.$watch(function(){
+		return this.username;
+	}, function(newValue, oldValue){
+		console.log('name updated!');
+	});
+
+	$scope.$watchCollection(function(){
+		return this.country;
+	}, function(newValue, oldValue){
+		console.log('value updated!')
+	}, true);
 }
 
 angular
