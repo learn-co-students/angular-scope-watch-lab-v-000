@@ -12,18 +12,18 @@ function UserController($scope) {
 	$scope.$watch(function (){
 		return this.username;
 	}, function(newValue, oldValue) {
-		console.log('username updated!');
+		console.log('username updated!', newValue);
 	});
 
 	$scope.$watch(function () {
 		return this.country;
-	}, function(newValue, oldValue) {
+	}, function(newValue) {
 		console.log('country updated!');
 	}, true);
 
 	$scope.$watchCollection(function () {
-    return this.collection;
-  }, function (newValue, oldValue) {
+    return this.collection.name;
+  }, function (newValue) {
     console.log('value updated!');
   });
 }
