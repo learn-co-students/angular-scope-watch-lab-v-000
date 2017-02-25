@@ -13,19 +13,19 @@ function UserController($scope) {
 	$scope.$watch(function () {
 		return user.username;
 	}, function (newValue, oldValue) {
-		console.log("Username was " + oldValue + ", now it's " + newValue);
+		console.log("Username updated!");
 	});
 
 	$scope.$watch(function () {
 		return user.country;
 	}, function (newValue, oldValue) {
-		console.log(user.country);
+		console.log("Country updated!");
 	}, true);
 
 	$scope.$watchCollection(function () {
 		return user.country.name;
 	}, function (newValue, oldValue) {
-		console.log(user.country.name);
+		console.log("Country name updated!");
 	});
 }
 
