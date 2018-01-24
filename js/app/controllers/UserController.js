@@ -6,6 +6,11 @@ function UserController() {
 
 		}
 	};
+  $scope.$watch(function () {
+        return this.username;
+    }, function (newValue, oldValue) {
+        console.log('value updated!');
+    });
 }
 
 angular
