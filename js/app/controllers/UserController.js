@@ -1,11 +1,31 @@
-function UserController() {
-	this.username = '';
+function UserController($scope) {
+	var ctrl = this;
+  ctrl.username = '';
 
-	this.country = {
-		name: {
-
+	ctrl.country = {
+		name: { 
+      short: ''
+      full: ''
+      population: ''
 		}
 	};
+
+  $scope.$watch(function(){
+    return ctr.username;
+  }, function(newVal, oldVal){    
+  });
+
+  $scope.$watch(function(){
+    return ctrl.country;
+  }, function(newVal){
+
+  }, true);
+
+  $scope.$watchCollection(function(){
+    return ctrl.country.name;
+  }, function(newVal){
+    
+  })
 }
 
 angular
