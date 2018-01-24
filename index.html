@@ -23,18 +23,19 @@
 
     <div ng-app="app" class="app">
         <div ng-controller="UserController as user">
-            <label>Username</label>
-            <input ng-model="user.username" />
-
-            <h5>Country</h5>
-            <label>Short Name</label>
-            <input ng-model="user.country.name.short" />
-
-            <label>Full Name</label>
-            <input ng-model="user.country.name.full" />
-
-            <label>Population</label>
-            <input ng-model="user.country.population" />
+          <label>Username</label>
+          <input ng-model="user.username" />
+            {{user.username}}
+          <h5>Country</h5>
+          <label>Short Name</label>
+          <input ng-model="user.country.name.short" />
+              {{user.country.name.short}}
+          <label>Full Name</label>
+          <input ng-model="user.country.name.full" />
+                {{user.country.name.full}}
+          <label>Population</label>
+          <input ng-model="user.country.population" />
+            {{user.country.population}}
         </div>
     </div>
 
